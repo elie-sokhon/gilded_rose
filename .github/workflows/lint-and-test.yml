@@ -42,11 +42,11 @@ jobs:
 
     - name: Run pylint (quality)
       run: |
-        pylint python/gilded_rose.py
+        pylint gilded_rose.py
 
     - name: Run mypy (type checking)
       run: |
-        mypy python/gilded_rose.py
+        mypy gilded_rose.py
 
     - name: Run tests
       run: |
