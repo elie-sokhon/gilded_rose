@@ -3,6 +3,7 @@ import os
 import sys
 from approvaltests import verify
 from approvaltests.reporters import PythonNativeReporter
+
 # insérer le dossier parent dans sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
