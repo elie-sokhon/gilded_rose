@@ -3,6 +3,7 @@
 
 from item_wrappers import item_factory
 
+
 # pylint: disable=too-few-public-methods
 class GildedRose:
     """Main class that processes a list of items and updates their quality and sell-in values."""
