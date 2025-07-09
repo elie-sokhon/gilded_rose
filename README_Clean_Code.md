@@ -1,15 +1,15 @@
-# Gilded Rose Refactoring — Clean Code Edition (Python)
+# Gilded Rose Refactoring (Python)
 
 ## Introduction
 
-This project is a clean-code refactor of the well-known **Gilded Rose Kata**. The goal of this refactoring effort was to apply Python best practices, reduce cyclomatic complexity, and improve the maintainability and testability of the code. 
+This project is a clean-code refactor of **Gilded Rose Kata**. The goal of this refactoring effort was to apply Python best practices, reduce complexity, and improve the maintainability and testability of the code. 
 
 Key software design principles such as the Open/Closed Principle (OCP), encapsulation, polymorphism, and modular architecture were applied to restructure the core logic while ensuring backward compatibility with the original interface.
 
 
 ## Refactored update_quality using the Open/Closed Principle
 
-Originally, the update_quality() method in the GildedRose class contained a large, fragile chain of 'if-elif' statements handling all item types in a monolithic block. This violated the **Open/Closed Principle** — every time a new item behavior needed to be introduced, the function had to be modified.
+Originally, the update_quality() method in the GildedRose class contained a large, fragile chain of 'if-elif' statements handling all item types in a block. This violated the Open/Closed Principle. Every time a new item behavior needed to be introduced, the function had to be modified.
 
 ## Added a Factory Function: item_factory()
 
@@ -25,7 +25,7 @@ Classes include:
 - BackstagePassItem
 - SulfurasItem
 - ConjuredItem
-- DefaultItem
+- NormalItem(Present as a class in item_wrappers.py)
 
 This design follows the Single Responsibility Principle and leverages polymorphism to avoid nested conditionals, making the rules modular, isolated, and testable.
 
@@ -46,12 +46,9 @@ A GitHub Actions workflow was created to enforce code quality and automate tests
 
 This ensures any future contributions adhere to clean code standards and don’t break existing behavior.
 
----
-
 ## Tests Refactored
 
-The test suite was fully restructured to improve readability, maintainability, and separation of concerns. Tests are now grouped by item type and reflect each rule in a clear, expressive way. 
+The test suite was fully restructured to improve readability, maintainability. Tests are now grouped by item type and reflect each rule in a clear way.
 
 **Approval testing** was retained to guarantee no regressions in expected outputs during refactoring.
 
----
