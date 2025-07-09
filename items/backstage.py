@@ -1,5 +1,6 @@
 from item_wrappers import ItemWrapper
 
+
 class BackstagePassItem(ItemWrapper):
     def update(self):
         self.increase_quality()

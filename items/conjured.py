@@ -1,5 +1,6 @@
 from item_wrappers import ItemWrapper
 
+
 class ConjuredItem(ItemWrapper):
     def update(self):
         self.decrease_quality()

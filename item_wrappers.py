@@ -1,9 +1,11 @@
 from models import Item
 
+
 class ItemWrapper:
     """
     Classe abstraite représentant un item enrichi d'une logique métier propre.
     """
+
     def __init__(self, item: Item):
         self.item = item
 
@@ -29,15 +31,19 @@ def item_factory(item: Item) -> ItemWrapper:
     """
     if item.name == "Aged Brie":
         from items.aged_brie import AgedBrieItem
+
         return AgedBrieItem(item)
     elif item.name == "Sulfuras, Hand of Ragnaros":
         from items.sulfuras import SulfurasItem
+
         return SulfurasItem(item)
     elif item.name == "Backstage passes to a TAFKAL80ETC concert":
         from items.backstage import BackstagePassItem
+
         return BackstagePassItem(item)
     elif "Conjured" in item.name:
         from items.conjured import ConjuredItem
+
         return ConjuredItem(item)
     else:
         return NormalItem(item)

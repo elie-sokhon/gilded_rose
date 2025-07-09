@@ -1,5 +1,6 @@
 from item_wrappers import ItemWrapper
 
+
 class AgedBrieItem(ItemWrapper):
     def update(self):
         self.increase_quality()
