@@ -5,17 +5,10 @@ import unittest
 
 from models import Item
 
-# insérer le dossier parent dans sys.path
+# E402 justified: modifying sys.path before importing project modules
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from gilded_rose import GildedRose
-
-# class GildedRoseTest(unittest.TestCase):
-#     def test_foo(self):
-#         items = [Item("foo", 0, 0)]
-#         gilded_rose = GildedRose(items)
-#         gilded_rose.update_quality()
-#         self.assertEqual("fixme", items[0].name)
+from gilded_rose import GildedRose  # noqa: E402
 
 
 class TestNormalItem(unittest.TestCase):
