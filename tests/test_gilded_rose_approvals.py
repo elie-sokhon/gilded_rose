@@ -1,11 +1,11 @@
 import io
 import os
 import sys
-
-# insérer le dossier parent dans sys.path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from approvaltests import verify
 from approvaltests.reporters import PythonNativeReporter
+# insérer le dossier parent dans sys.path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 
 from texttest_fixture import main
 
